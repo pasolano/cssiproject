@@ -5,6 +5,7 @@ import random
 import jinja2
 from google.appengine.api import users
 from google.appengine.ext import ndb
+from models import Item
 
 # from google.appengine.ext import ndb
 # from google.appengine.api import users
@@ -17,8 +18,7 @@ jinja_current_directory = jinja2.Environment(
 
 
 #
-class Event(ndb.Model):
-    organizer = ndb.StringProperty(required=True)
+
 
 class HelloHandler(webapp2.RequestHandler):
     def get(self):
@@ -46,6 +46,7 @@ class InventoryHandler(webapp2.RequestHandler):
         self.response.write(inventory_template.render())
 
 
+<<<<<<< HEAD
 # user.user_id()
 #
 # class Event (ndb.Model):
@@ -55,6 +56,8 @@ class InventoryHandler(webapp2.RequestHandler):
 # Event(organizer=user.user_id(), title="LISTener")
 
 
+=======
+>>>>>>> 7b5b5ad70fe6fe160db82900057b1edc54ae2c24
 app = webapp2.WSGIApplication([
     ('/', HelloHandler),
     ('/account', AccountHandler),

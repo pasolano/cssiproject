@@ -3,6 +3,7 @@ import webapp2
 import os
 import random
 import jinja2
+
 from google.appengine.api import users
 from google.appengine.ext import ndb
 from models import Item
@@ -43,6 +44,15 @@ class InventoryHandler(webapp2.RequestHandler):
         inventory_template = jinja_current_directory.get_template('/inventory_input.html')
         self.response.write(inventory_template.render())
 
+
+
+# user.user_id()
+#
+# class Event (ndb.Model):
+#     organizer=ndb.StringProperty(required=True)
+#     title=ndb.StringProperty(required=True)
+#
+# Event(organizer=user.user_id(), title="LISTener")
 
 app = webapp2.WSGIApplication([
     ('/', HelloHandler),

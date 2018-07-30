@@ -5,19 +5,38 @@
 
   <head>
     <title>LISTner</title>
+    <meta name="google-signin-client_id" content="45360810976-8mea6rso2m6sc0uc9uc6ms0riadbkhli.apps.googleusercontent.com">
   </head>
 
   <body>
-    <h1>Welcome</h1>
-    <div>
-      <center>
-        <h1> LOGIN </h1>
-        <h2>Email</h2>
-        <input type="text" />
-        <h2>Password</h2>
-        <input type="text" />
-      </center>
-    </div>
+    <center>
+      <h1>Welcome</h1>
+    </center>
+    <center>
+      <div id="my-signin2"></div>
+        <script>
+          function onSuccess(googleUser) {
+            console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+          }
+          function onFailure(error) {
+            console.log(error);
+          }
+          function renderButton() {
+            gapi.signin2.render('my-signin2', {
+              'scope': 'profile email',
+              'width': 240,
+              'height': 50,
+              'longtitle': true,
+              'theme': 'dark',
+              'onsuccess': onSuccess,
+              'onfailure': onFailure
+            });
+          }
+        </script>
+
+        <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+
+    </center>
   </body>
 
 

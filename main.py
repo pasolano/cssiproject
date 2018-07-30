@@ -23,8 +23,14 @@ class AccountHandler(webapp2.RequestHandler):
         account_template = jinja_current_directory.get_template('/account.html')
         self.response.write(account_template.render())
 
+class InventoryHandler(webapp2.RequestHandler):
+    def get(self):
+        inventory_template = jinja_current_directory.get_template('/inventory_input.html')
+        self.response.write(inventory_template.render())
+
 
 app = webapp2.WSGIApplication([
     ('/', HelloHandler),
-    ('/account', AccountHandler)
+    ('/account', AccountHandler),
+    ('/inventory-input', InventoryHandler)
 ], debug=True)

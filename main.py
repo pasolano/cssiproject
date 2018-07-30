@@ -1,7 +1,9 @@
+
 import webapp2
 import os
 import random
 import jinja2
+
 
 
 jinja_current_directory = jinja2.Environment(
@@ -16,7 +18,13 @@ class HelloHandler(webapp2.RequestHandler):
         welcome_template = jinja_current_directory.get_template('/mainpage.html')
         self.response.write(welcome_template.render())
 
+class AccountHandler(webapp2.RequestHandler):
+    def get(self):
+        account_template = jinja_current_directory.get_template('/account.html')
+        self.response.write(account_template.render())
+
 
 app = webapp2.WSGIApplication([
-    ('/', HelloHandler)
+    ('/', HelloHandler),
+    ('/account', AccountHandler)
 ], debug=True)

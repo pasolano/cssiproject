@@ -4,6 +4,7 @@ import os
 import random
 import jinja2
 from google.appengine.api import users
+from google.appengine.ext import ndb
 
 
 jinja_current_directory = jinja2.Environment(
@@ -11,19 +12,24 @@ jinja_current_directory = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
-user = users.get_current_user()
-if user:
-    nickname = user.nickname()
-    logout_url = users.create_logout_url('/')
-    greeting = 'Welcome, {}! (<a href="{}">sign out</a>)'.format(
-        nickname, logout_url)
-else:
-    login_url = users.create_login_url('/')
-    greeting = '<a href="{}">Sign in</a>'.format(login_url)
 
+
+#
+class Event(ndb.Model):
+    organizer = ndb.StringProperty(required=True)
 
 class HelloHandler(webapp2.RequestHandler):
     def get(self):
+        user = users.get_current_user()
+        if user:
+            nickname = user.nickname()
+            logout_url = users.create_logout_url('/')
+            greeting = ('Welcome, %s! (<a href="%s">sign out</a>)' % (nickname, logout_url))
+        else:
+            login_url = users.create_login_url('/')
+            greeting = '<a href="%s">Sign in</a>' % (login_url)
+        user.user_id()
+
         welcome_template = jinja_current_directory.get_template('/mainpage.html')
         self.response.write(welcome_template.render())
 

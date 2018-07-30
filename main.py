@@ -29,6 +29,7 @@ class InventoryHandler(webapp2.RequestHandler):
         self.response.write(inventory_template.render())
 
 
+
 app = webapp2.WSGIApplication([
     ('/', HelloHandler),
     ('/account', AccountHandler),

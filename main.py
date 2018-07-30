@@ -3,14 +3,10 @@ import webapp2
 import os
 import random
 import jinja2
-<<<<<<< HEAD
 
-# from google.appengine.ext import ndb
-# from google.appengine.api import users
-=======
 from google.appengine.api import users
 from google.appengine.ext import ndb
->>>>>>> master
+from models import Item
 
 
 jinja_current_directory = jinja2.Environment(
@@ -21,8 +17,7 @@ jinja_current_directory = jinja2.Environment(
 
 
 #
-class Event(ndb.Model):
-    organizer = ndb.StringProperty(required=True)
+
 
 class HelloHandler(webapp2.RequestHandler):
     def get(self):
@@ -50,6 +45,7 @@ class InventoryHandler(webapp2.RequestHandler):
         self.response.write(inventory_template.render())
 
 
+
 # user.user_id()
 #
 # class Event (ndb.Model):
@@ -57,7 +53,6 @@ class InventoryHandler(webapp2.RequestHandler):
 #     title=ndb.StringProperty(required=True)
 #
 # Event(organizer=user.user_id(), title="LISTener")
-
 
 app = webapp2.WSGIApplication([
     ('/', HelloHandler),

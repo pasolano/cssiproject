@@ -14,7 +14,7 @@
       <h1>Welcome to LISTener</h1>
     </center>
     <center>
-      <div id="my-signin2"></div>
+      <!-- <div id="my-signin2"></div>
         <script>
           function onSuccess(googleUser) {
             console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
@@ -33,18 +33,13 @@
               'onfailure': onFailure
             });
           }
-        </script>
+        </script> -->
 
         <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+        <div class="g-signin2" data-onsuccess="onSignIn" onclick="location.href='/account'"></div>
     </center>
 
-    <div>
-      <center>
-        <form action="/account" >
-          <button type="submit">Go</button>
-        </form>
-      </center>
-    </div>
+
 
   </body>
 

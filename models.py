@@ -1,3 +1,5 @@
+from google.appengine.ext import ndb
+
 class UserAccount(ndb.Model):
     user_id = ndb.StringProperty(required=True)
 

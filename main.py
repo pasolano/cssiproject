@@ -76,6 +76,6 @@ app = webapp2.WSGIApplication([
     ('/', HelloHandler),
     ('/account', AccountHandler),
     ('/inventory-input', InventoryHandler),
-    ('/products', ProductsHandler),
+    ('/cur_products', ProductsHandler),
     ('/lists', ListsHandler)
 ], debug=True)

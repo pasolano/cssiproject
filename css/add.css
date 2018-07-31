@@ -2,3 +2,57 @@ body {
   background-color: #BFD4D0;
   font-family: 'Open Sans Condensed', sans-serif;
 }
+
+h1 {
+  text-align: center;
+  font-size: 60px;
+  left: 0;
+  line-height: 200px;
+  margin: auto;
+  margin-top: -100px;
+  position: absolute;
+  top: 15%;
+  width: 100%;
+}
+
+.class1 {
+  font-size: 40px;
+  text-align: center;
+  margin: auto;
+  margin-top: -100px;
+  position: absolute;
+  top: 40%;
+  width: 100%;
+
+}
+
+.button {
+  background-color: white;
+    border-right: white;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.class2 {
+  text-align: center;
+  margin: auto;
+  margin-top: -100px;
+  position: absolute;
+  top: 70%;
+  width: 100%;
+}
+
+/* .input {
+  height: 24px;
+  width: 150px;
+  text-align: center;
+  margin: auto;
+  margin-top: -100px;
+  position: absolute;
+  top: 70%;
+} */

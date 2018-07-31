@@ -52,7 +52,7 @@ class InventoryHandler(webapp2.RequestHandler):
         template_product = self.request.get('product_name')
         template_expiration_date=Template.query(Template.name==template_product).fetch(1)[0].key
         item = {
-            'owner' = user
+            #'owner' = user
             'product_name': get_item_name(self.request.get('item_name')),
             'expiration_date': get_expiration_date(self.request.get('expiration_date')),
         }

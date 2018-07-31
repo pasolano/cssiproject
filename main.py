@@ -49,7 +49,6 @@ class ProductsHandler(webapp2.RequestHandler):
         products_template = jinja_current_directory.get_template('/htmls/cur_products.html')
         self.response.write(products_template.render())
 
-<<<<<<< HEAD
     def post(self):
         user = users.get_current_user()
         template_product = self.request.get('product_name')
@@ -61,7 +60,7 @@ class ProductsHandler(webapp2.RequestHandler):
         }
         inventory_template = JINJA_ENVIRONMENT.get_template('templates/inventory_table.html')
         self.response.write(inventory_template.render(item))
-=======
+
 class ListsHandler(webapp2.RequestHandler):
     def get(self):
         lists_template = jinja_current_directory.get_template('/htmls/lists.html')
@@ -71,7 +70,6 @@ class InventoryHandler(webapp2.RequestHandler):
     def get(self):
         inventory_template = jinja_current_directory.get_template('/htmls/inventory_input.html')
         self.response.write(inventory_template.render())
->>>>>>> NewBranch
 
 
 app = webapp2.WSGIApplication([

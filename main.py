@@ -58,7 +58,7 @@ class ProductsHandler(webapp2.RequestHandler):
             'product_name': get_item_name(self.request.get('item_name')),
             'expiration_date': get_expiration_date(self.request.get('expiration_date')),
         }
-        inventory_template = JINJA_ENVIRONMENT.get_template('/templates/inventory_table.html')
+        inventory_template = JINJA_ENVIRONMENT.get_template('/templates/cur_products.html')
         self.response.write(inventory_template.render(item))
 
 class ListsHandler(webapp2.RequestHandler):

@@ -3,10 +3,9 @@ import webapp2
 import os
 import random
 import jinja2
-
 from google.appengine.api import users
 from google.appengine.ext import ndb
-from models import Item
+from models import Item, UserAccount
 
 # from google.appengine.ext import ndb
 # from google.appengine.api import users
@@ -25,6 +24,7 @@ def get_expiration_date(statement):
 class HelloHandler(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
+
         if user:
             nickname = user.nickname()
             logout_url = users.create_logout_url('/')
@@ -32,20 +32,22 @@ class HelloHandler(webapp2.RequestHandler):
         else:
             login_url = users.create_login_url('/')
             greeting = '<a href="%s">Sign in</a>' % (login_url)
+
         user.user_id()
 
-        welcome_template = jinja_current_directory.get_template('/mainpage.html')
-        self.response.write(welcome_template.render())
+        welcome_template = jinja_current_directory.get_template('/htmls/mainpage.html')
+        self.response.write(welcome_template.render({'greeting': greeting}))
 
 class AccountHandler(webapp2.RequestHandler):
     def get(self):
-        account_template = jinja_current_directory.get_template('/account.html')
-        self.response.write(account_template.render())
+        logout_link = users.create_logout_url('/')
+        account_template = jinja_current_directory.get_template('/htmls/account.html')
+        self.response.write(account_template.render({'logout_link': logout_link}))
 
-class InventoryHandler(webapp2.RequestHandler):
+class ProductsHandler(webapp2.RequestHandler):
     def get(self):
-        inventory_template = jinja_current_directory.get_template('/inventory_input.html')
-        self.response.write(inventory_template.render())
+        products_template = jinja_current_directory.get_template('/htmls/cur_products.html')
+        self.response.write(products_template.render())
 
     def post(self):
         user = users.get_current_user()
@@ -59,16 +61,21 @@ class InventoryHandler(webapp2.RequestHandler):
         inventory_template = JINJA_ENVIRONMENT.get_template('templates/inventory_table.html')
         self.response.write(inventory_template.render(item))
 
-# user.user_id()
-#
-# class Event (ndb.Model):
-#     organizer=ndb.StringProperty(required=True)
-#     title=ndb.StringProperty(required=True)
-#
-# Event(organizer=user.user_id(), title="LISTener")
+class ListsHandler(webapp2.RequestHandler):
+    def get(self):
+        lists_template = jinja_current_directory.get_template('/htmls/lists.html')
+        self.response.write(lists_template.render())
+
+class InventoryHandler(webapp2.RequestHandler):
+    def get(self):
+        inventory_template = jinja_current_directory.get_template('/htmls/inventory_input.html')
+        self.response.write(inventory_template.render())
+
 
 app = webapp2.WSGIApplication([
     ('/', HelloHandler),
     ('/account', AccountHandler),
-    ('/inventory-input', InventoryHandler)
+    ('/inventory-input', InventoryHandler),
+    ('/products', ProductsHandler),
+    ('/lists', ListsHandler)
 ], debug=True)

@@ -10,6 +10,9 @@ handlers:
 - url: /LISTener_images
   static_dir: LISTener_images
 
+- url: /css
+  static_dir: css
+
 - url: .*
   script: main.app
   login: required

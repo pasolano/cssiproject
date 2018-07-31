@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="icon" type="image/jpg" href="file:///Users/demouser/cssiproject/LISTener_images/LISTenerLogo.JPG">
-    <link rel="stylesheet" href="css/everything.css" />
-    
     <title>Inventory Adding</title>
   </head>
+  <link rel="icon" type="image/jpg" href="file:///Users/demouser/cssiproject/LISTener_images/LISTenerLogo.JPG">
   <body>
     <h1>Add to your inventory:</h1>
-      <form action="inventory-input">
+      <form action="templates/inventory_table.html">
         Item Name:<br>
         <input type="text" name="item_name" >
         <br>
         Expiration Date:<br>
-        <input type="date" name="expiration_date" >
+        <input type="text" name="expiration_date" >
         <br><br>
+
         <input type="submit" value="Add Item">
+
       </form>
 
   </body>

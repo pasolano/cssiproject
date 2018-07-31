@@ -70,5 +70,5 @@ class InventoryHandler(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([
     ('/', HelloHandler),
     ('/account', AccountHandler),
-    ('/inventory-input', InventoryHandler)
+    ('/inventory_input', InventoryHandler)
 ], debug=True)

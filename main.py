@@ -34,20 +34,18 @@ class AccountHandler(webapp2.RequestHandler):
 
 class ProductsHandler(webapp2.RequestHandler):
     def get(self):
-        products_template = jinja_current_directory.get_template('/htmls/cur_products.html')
-        self.response.write(products_template.render())
-
-    def post(self):
         user = users.get_current_user()
-        Item(
-        item_name=self.request.get('item_name'),
-        expiration_date=self.request.get('expiration_date'),
-        use_time=self.request.get('use_time'),
-        user_id=user.user_id()
-        ).put()
+        # Item(
+        # item_name=self.request.get('item_name'),
+        # expiration_date=self.request.get('expiration_date'),
+        # use_time=self.request.get('use_time'),
+        # user_id=user.user_id()
+        # ).put()
         items = list(Item.get_by_user(user))
         inventory_template = jinja_current_directory.get_template('/htmls/cur_products.html')
         self.response.write(inventory_template.render(items=items))
+
+
 
 class ListsHandler(webapp2.RequestHandler):
     def get(self):
@@ -58,6 +56,17 @@ class InventoryHandler(webapp2.RequestHandler):
     def get(self):
         inventory_template = jinja_current_directory.get_template('/htmls/inventory_input.html')
         self.response.write(inventory_template.render())
+    def post(self):
+        user = users.get_current_user()
+        Item(
+        item_name=self.request.get('item_name'),
+        expiration_date=self.request.get('expiration_date'),
+        use_time=self.request.get('use_time'),
+        user_id=user.user_id()
+        ).put()
+        items = list(Item.get_by_user(user))
+        inventory_template = jinja_current_directory.get_template('/htmls/inventory_input.html')
+        self.response.write(inventory_template.render(items=items))
 
 
 app = webapp2.WSGIApplication([

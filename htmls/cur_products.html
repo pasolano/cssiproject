@@ -31,10 +31,9 @@
     </tr>
     {% for item in items %}
         <tr class=>
-          <td>{{item.item_name}}</td>
-          <td>{{item.use_time}}</td>
-          <td>{{item.expiration_date}}</td>
-
+          <td style="text-align: center; vertical-align: middle;">{{item.item_name}}</td>
+          <td style="text-align: center; vertical-align: middle;">{{item.use_time}}</td>
+          <td style="text-align: center; vertical-align: middle;">{{item.expiration_date}}</td>
         </tr>
     {% endfor %}
   </table>

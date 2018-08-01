@@ -75,6 +75,20 @@ h2 {
     border-radius: 50px;
   }
 
+.button2 {
+  background-color: white;
+    border-right: white;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50px;
+    top: 100px;
+}
+
   footer {
     text-align: center;
     font-family: 'Libre Barcode 39 Extended Text';

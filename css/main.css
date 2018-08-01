@@ -64,3 +64,17 @@ h2 {
     border-radius: 50px;
     bottom: 50px;
 }
+
+#about_us {
+    background-color: #D9D9D9;
+    /* width: 300px;
+    border: 25px solid green; */
+    position: fixed;
+    bottom: 200px;
+    right: 350px;
+    left: 350px;
+    width: 700px;
+    font-size: 30px;
+    padding: 10px;
+
+  }

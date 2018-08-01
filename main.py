@@ -84,6 +84,6 @@ app = webapp2.WSGIApplication([
     ('/inventory-input', InventoryHandler),
     ('/cur_products', ProductsHandler),
     ('/lists', ListsHandler),
-    ('/contact', ContactHandler)
+    ('/contact', ContactHandler),
     ('/.*', RedirectHomeHandler)
 ], debug=True)

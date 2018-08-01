@@ -14,14 +14,13 @@
       <th>Item Name:</th>
       <th>Expiration Date:</th>
     </tr>
-    <tr>
-      <td>{{product_name}}</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>{{expiration_date}}</td>
-      <td></td>
-    </tr>
+    {% for item in items %}
+        <tr>
+          {{item.item_name}}
+          {{item.expiration_date}}
+        </tr>
+
+    {% endfor %}
   </table>
 </body>
 </html>

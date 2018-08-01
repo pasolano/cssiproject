@@ -51,6 +51,9 @@ class ListsHandler(webapp2.RequestHandler):
     def get(self):
         lists_template = jinja_current_directory.get_template('/htmls/lists.html')
         self.response.write(lists_template.render())
+    shopping = []
+    # def post(self):
+
 
 class InventoryHandler(webapp2.RequestHandler):
     def get(self):

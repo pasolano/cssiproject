@@ -88,15 +88,30 @@ h1 {
     bottom: 100px;
   }
 
+.button2 {
+  background-color: white;
+  border-right: white;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 50px;
+  /* position: absolute; */
+  bottom: 100px;
+
+}
+
 footer {
   text-align: center;
   font-family: 'Libre Barcode 39 Extended Text';
   font-size: 50px;
   left: 0;
-  line-height: 200px;
+  /* line-height: 200px; */
   margin: auto;
-  margin-top: -100px;
+  margin-top: -10px;
   position: absolute;
-  top: 85%;
+  top: 90%;
   width: 100%;
   }

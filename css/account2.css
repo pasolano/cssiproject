@@ -36,7 +36,7 @@ h2 {
   margin: auto;
   /* margin-top: -100px; */
   position: absolute;
-  top: 60px;
+  top: 80px;
   width: 100%;
 }
 
@@ -77,4 +77,16 @@ h4 {
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 50px;
+}
+
+footer {
+  font-family: 'Libre Barcode 39 Extended Text';
+  font-size: 50px;
+  left: 0;
+  line-height: 200px;
+  margin: auto;
+  margin-top: -100px;
+  position: absolute;
+  top: 85%;
+  width: 100%;
 }

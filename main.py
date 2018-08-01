@@ -68,6 +68,11 @@ class InventoryHandler(webapp2.RequestHandler):
         inventory_template = jinja_current_directory.get_template('/htmls/inventory_input.html')
         self.response.write(inventory_template.render(items=items))
 
+class ContactHandler(webapp2.RequestHandler):
+    def get(self):
+        contact_template = jinja_current_directory.get_template('/htmls/contact.html')
+        self.response.write(contact_template.render())
+
 class RedirectHomeHandler(webapp2.RequestHandler):
     def get(self):
         self.redirect("/")
@@ -79,5 +84,6 @@ app = webapp2.WSGIApplication([
     ('/inventory-input', InventoryHandler),
     ('/cur_products', ProductsHandler),
     ('/lists', ListsHandler),
+    ('/contact', ContactHandler)
     ('/.*', RedirectHomeHandler)
 ], debug=True)

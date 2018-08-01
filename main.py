@@ -78,6 +78,8 @@ class RedirectHomeHandler(webapp2.RequestHandler):
         self.redirect("/")
 
 
+
+
 app = webapp2.WSGIApplication([
     ('/', HelloHandler),
     ('/account', AccountHandler),

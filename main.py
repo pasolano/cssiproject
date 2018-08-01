@@ -59,11 +59,16 @@ class InventoryHandler(webapp2.RequestHandler):
         inventory_template = jinja_current_directory.get_template('/htmls/inventory_input.html')
         self.response.write(inventory_template.render())
 
+class RedirectHomeHandler(webapp2.RequestHandler):
+    def get(self):
+        self.redirect("/")
+
 
 app = webapp2.WSGIApplication([
     ('/', HelloHandler),
     ('/account', AccountHandler),
     ('/inventory-input', InventoryHandler),
     ('/cur_products', ProductsHandler),
-    ('/lists', ListsHandler)
+    ('/lists', ListsHandler),
+    ('/.*', RedirectHomeHandler)
 ], debug=True)

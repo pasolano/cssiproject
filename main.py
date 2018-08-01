@@ -29,7 +29,7 @@ class HelloHandler(webapp2.RequestHandler):
 class AccountHandler(webapp2.RequestHandler):
     def get(self):
         logout_link = users.create_logout_url('/')
-        account_template = jinja_current_directory.get_template('/htmls/account.html')
+        account_template = jinja_current_directory.get_template('/htmls/account2.html')
         self.response.write(account_template.render({'logout_link': logout_link}))
 
 class ProductsHandler(webapp2.RequestHandler):

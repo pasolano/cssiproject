@@ -31,11 +31,11 @@ body {
 }
 h1 {
   font-family: 'Libre Barcode 39 Extended Text';
-  font-size: 70px;
+  font-size: 85px;
   left: 0;
-  line-height: 200px;
+  line-height: 300px;
   margin: auto;
-  margin-top: -100px;
+  margin-top: -225px;
   position: absolute;
   top: 40%;
   width: 100%;
@@ -66,11 +66,11 @@ h2 {
 }
 
 #about_us {
-    background-color: #D9D9D9;
+
     /* width: 300px;
     border: 25px solid green; */
     position: fixed;
-    bottom: 200px;
+    bottom: 50px;
     right: 350px;
     left: 350px;
     width: 700px;

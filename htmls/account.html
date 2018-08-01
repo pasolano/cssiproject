@@ -5,23 +5,38 @@
   <link rel="icon" type="image/jpg" href="/LISTener_images/LISTenerLogo.JPG">
   <title>LISTener</title>
 </head>
+
 <body>
-  <center>
-    <h1>Your Account</h1>
-    <h2>
-      <a href="{{logout_link}}">Logout</a>
-    </h2>
-    <h3>
-      <form action="/inventory-input">
-        <button class="button" type="submit">Add to Your Inventory</button>
-      </form>
-      <form action="/cur_products">
-        <button class="button" type="submit">Your Current Products</button>
-      </form>
-      <form action="/lists">
-        <button class="button" type="submit">Your Shopping Lists</button>
-      </form>
-    </h3>
-  </center>
+
+  <!-- <div>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/account">Your Account</a></li>
+      <li><a href="/cur_products">Your Inventory</a></li>
+      <li><a href="/lists">Your Lists</a></li>
+      <li><a href="/inventory-input">Add Item</a></li>
+    </ul>
+  </div> -->
+
+  <div>
+    <center>
+      <h1>Your Account</h1>
+      <h2>
+        <a href="{{logout_link}}">Logout</a>
+      </h2>
+      <h3>
+        <form action="/inventory-input">
+          <button class="button" type="submit">Add to Your Inventory</button>
+        </form>
+        <form action="/cur_products">
+          <button class="button" type="submit">Your Current Products</button>
+        </form>
+        <form action="/lists">
+          <button class="button" type="submit">Your Shopping Lists</button>
+        </form>
+      </h3>
+    </center>
+  </div>
+
 </body>
 </html>

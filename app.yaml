@@ -10,6 +10,10 @@ handlers:
 - url: /LISTener_images
   static_dir: LISTener_images
 
+- url: /LISTener_images/LISTenerLogo\.JPG
+  static_files: LISTener_images/LISTenerLogo.JPG
+  upload: LISTener_images/LISTenerLogo\.JPG
+
 - url: /css
   static_dir: css
 

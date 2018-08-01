@@ -45,12 +45,6 @@ class ProductsHandler(webapp2.RequestHandler):
         user_id=user.user_id()
         ).put()
         items = list(Item.get_by_user(user))
-        print items
-        # items_dict = {
-        #
-        # }
-
-
         inventory_template = jinja_current_directory.get_template('/htmls/cur_products.html')
         self.response.write(inventory_template.render(items=items))
 

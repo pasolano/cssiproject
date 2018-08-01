@@ -42,6 +42,7 @@ class ProductsHandler(webapp2.RequestHandler):
         Item(
         item_name=self.request.get('item_name'),
         expiration_date=self.request.get('expiration_date'),
+        use_time=self.request.get('use_time'),
         user_id=user.user_id()
         ).put()
         items = list(Item.get_by_user(user))

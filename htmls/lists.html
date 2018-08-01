@@ -10,14 +10,7 @@
 </head>
 <body>
 
-  <div class="topnav">
-    <a class="active" href="/">Home</a>
-    <a href="/account">My Account</a>
-    <a href="/cur_products">My Inventory</a>
-    <a href="/lists">My Lists</a>
-    <a href="/inventory-input">Add Item</a>
-    <a href="/contact">Contact Us</a>
-  </div>
+  {% include "htmls/header.html" %}
 
 <div class="content">
 
@@ -44,7 +37,7 @@
         <input class="button" type="submit" value="Back">
     </form>
   </div>
-  
+
   <table id ="items" style="width:100%">
     <tr>
       <th>Item Name:</th>

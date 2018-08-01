@@ -72,3 +72,16 @@ h1 {
   top: 80px;
   width: 100%;
 }
+
+.button {
+    background-color: white;
+    border-right: white;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50px;
+  }

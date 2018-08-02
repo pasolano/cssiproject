@@ -30,18 +30,24 @@
       <th>Expiration Date:</th>
 
     </tr>
+
     {% for item in items %}
+
         <tr class=>
           <td style="text-align: center; vertical-align: middle;">{{item.item_name}}</td>
           <td style="text-align: center; vertical-align: middle;">{{item.use_time}}</td>
           <td style="text-align: center; vertical-align: middle;">{{item.expiration_date}}</td>
           <td>
-            <button class="button2" data_item_id="{{item.item_name}}">Add</button>
-
+            <form method="POST" action="/add_item_to_list">
+              <input id="prodId" name="item_name" type="hidden" value="{{item.item_name}}">
+              <button class="button2" data_item_id="{{item.item_name}}">Add</button>
+            </form>
           </td>
+
         </tr>
+
     {% endfor %}
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
       let buttons = document.querySelectorAll('.button2');
       for (let button of buttons) {
         button.addEventListener('click', function onClick(){
@@ -49,7 +55,7 @@
           alert(name);
         });
       }
-    </script>
+    </script> -->
   </table>
 
   <br />

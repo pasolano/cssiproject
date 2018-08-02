@@ -5,7 +5,7 @@ import random
 import jinja2
 from google.appengine.api import users
 from google.appengine.ext import ndb
-from models import Item
+from models import Item, ShoppingListItem
 
 
 
@@ -49,10 +49,32 @@ class ProductsHandler(webapp2.RequestHandler):
 
 class ListsHandler(webapp2.RequestHandler):
     def get(self):
+        user = users.get_current_user()
+        shopping_items = ShoppingListItem.get_by_user(user)
+        names = []
+        for list_item in shopping_items:
+            names.append(list_item.item.get().item_name)
+        # print(names)
         lists_template = jinja_current_directory.get_template('/htmls/lists.html')
-        self.response.write(lists_template.render())
-    shopping = []
+        self.response.write(lists_template.render(names=names))
+
     # def post(self):
+
+class AddItemHandler(webapp2.RequestHandler):
+    def post(self):
+        user = users.get_current_user()
+        new_item = self.request.get("item_name")
+        self.response.write("hello" + new_item)
+        current_item = Item.query().filter(Item.item_name == new_item).get()
+        ShoppingListItem(
+        user_id=user.user_id(),
+        item=current_item.key
+        ).put()
+
+
+
+        self.redirect('/lists')
+
 
 
 class InventoryHandler(webapp2.RequestHandler):
@@ -90,5 +112,6 @@ app = webapp2.WSGIApplication([
     ('/cur_products', ProductsHandler),
     ('/lists', ListsHandler),
     ('/contact', ContactHandler),
+    ('/add_item_to_list', AddItemHandler),
     ('/.*', RedirectHomeHandler)
 ], debug=True)

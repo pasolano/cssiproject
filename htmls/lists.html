@@ -24,21 +24,29 @@
 
   <center>
     <h1>YOUR LISTS</h1>
-
-
-
   </center>
-  <div class="center">
-    <!-- <center> -->
-      <select class="dropdown">
-        <option value="volvo">Volvo</option>
-        <option value="saab">Saab</option>
-        <option value="mercedes">Mercedes</option>
-        <option value="audi">Audi</option>
-      </select>
-    <!-- </center> -->
 
-  </div>
+
+  <table id ="items" style="width:100%">
+    <tr>
+      <th>Item Name:</th>
+    </tr>
+    {% for name in names %}
+        <tr class=>
+          <td style="text-align: center; vertical-align: middle;">{{name}}</td>
+        </tr>
+    {% endfor %}
+    <!-- <script type="text/javascript">
+      let buttons = document.querySelectorAll('.button2');
+      for (let button of buttons) {
+        button.addEventListener('click', function onClick(){
+          let name = button.getAttribute('data_item_id');
+          alert(name);
+        });
+      }
+    </script> -->
+  </table>
+
   <div class="center">
     <form action="/account">
         <input class="button" type="submit" value="Back">

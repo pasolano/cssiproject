@@ -12,4 +12,12 @@ class Item(ndb.Model):
     def get_by_user(cls, user):
         return cls.query().filter(cls.user_id == user.user_id()).fetch()
 
+class ShoppingListItem(ndb.Model):
+    user_id = ndb.StringProperty(required=True)
+    item = ndb.KeyProperty(Item)
+
+    @classmethod
+    def get_by_user(cls, user):
+        return cls.query().filter(cls.user_id == user.user_id()).fetch()
+
 #if want multiple lists for one user, would want to make a new class model

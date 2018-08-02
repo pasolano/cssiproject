@@ -5,7 +5,7 @@ class Item(ndb.Model):
     user_id = ndb.StringProperty(required=True)
     item_name = ndb.StringProperty(required=True)
     expiration_date = ndb.StringProperty(required=True)
-    use_time = ndb.StringProperty(required=True)
+    use_time = ndb.StringProperty(required=True, default="")
     is_in_list = False
 
     @classmethod

@@ -16,7 +16,7 @@
   </center>
 
   <table id ="items" style="width:100%">
-    <tr>
+    <tr class="table_titles">
       <th>Item Name:</th>
       <th>Your Usual Use Time:</th>
       <th>Expiration Date:</th>
@@ -25,7 +25,7 @@
 
     {% for item in expired_items %}
 
-        <tr class=>
+        <tr class="inventory_table">
           <td style="text-align: center; vertical-align: middle;">{{item.item_name}}</td>
           <td style="text-align: center; vertical-align: middle;">{{item.use_time}}</td>
           <td style="text-align: center; vertical-align: middle;">{{item.expiration_date}}</td>

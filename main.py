@@ -122,11 +122,8 @@ app = webapp2.WSGIApplication([
     ('/cur_products', ProductsHandler),
     ('/lists', ListsHandler),
     ('/contact', ContactHandler),
-<<<<<<< HEAD
     ('/add_item_to_list', AddItemHandler),
-=======
     ('/notifications', NotificationHandler),
     ('/about', AboutHandler),
->>>>>>> bbf536a02f2dcc240d530489e21d8d57edd899d4
     ('/.*', RedirectHomeHandler)
 ], debug=True)

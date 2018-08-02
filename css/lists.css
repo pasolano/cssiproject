@@ -32,8 +32,21 @@ body {
   margin-right: auto;
   width: 100%;
 }
+
+#shopping {
+  text-align: center;
+  font-size: 40px;
+  left: 0;
+  /* line-height: 100px; */
+  margin: auto;
+  /* margin-top: -100px; */
+  position: absolute;
+  top: 160px;
+  width: 100%;
+}
+
 h1 {
-  font-size: 50px;
+  font-size: 60px;
   left: 0;
   /* line-height: 100px; */
   margin: auto;
@@ -81,6 +94,23 @@ h2 {
     bottom: 50px;
 
   }
+
+.list_button {
+  background-color: white;
+    border-right: white;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50px;
+    position: absolute;
+    bottom: 100px;
+
+}
+
 .center {
   width: 100%;
   text-align: center;

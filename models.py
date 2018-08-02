@@ -4,8 +4,13 @@ from google.appengine.api import users
 class Item(ndb.Model):
     user_id = ndb.StringProperty(required=True)
     item_name = ndb.StringProperty(required=True)
+<<<<<<< HEAD
     expiration_date = ndb.DateProperty(required=True)
     use_time = ndb.StringProperty(required=True)
+=======
+    expiration_date = ndb.StringProperty(required=True)
+    use_time = ndb.StringProperty(required=True, default="")
+>>>>>>> 38806029f6d298613500f598ad5b69fe48c65ca5
     is_in_list = False
 
     @classmethod

@@ -74,8 +74,8 @@ img {
 
 
 .table_info {
-  position: fixed;
-  bottom: 300px;
+  position: absolute;
+  top: 180px;
   left: 260px;
 }
 

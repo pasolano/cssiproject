@@ -2,22 +2,11 @@
 <html>
 
   <head>
-    <link rel="stylesheet" href="../css/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Extended+Text" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
-    <link rel="icon" type="image/jpg" href="/LISTener_images/LISTenerLogo.jpg">
-    <title>LISTener</title>
+    {% include "htmls/head.html" %}
   </head>
 
   <body>
-    <div class="topnav">
-    <a class="active" href="/">Home</a>
-    <a href="/account">My Account</a>
-    <a href="/cur_products">My Inventory</a>
-    <a href="/lists">My Lists</a>
-    <a href="/inventory-input">Add Item</a>
-    <a href="/contact">Contact Us</a>
-    <div>
+  {% include "htmls/header.html" %}
 
 
 
@@ -27,12 +16,8 @@
     </center>
 
     <center>
-      <div id="about_us">
-          <!-- Ever have disorganized shopping lists?
-          Ever forget all the items you needed once you got to the store?
-          Ever forget when something expires?
-          This webapp will help you with all of the above! -->
-        <img src="/LISTener_images/LISTenerLogo.jpg" height="350" width="350" align="top"/>
+      <div id="main_page_logo">
+        <img src="/LISTener_images/LISTenerLogo.jpg" height="350" width="375" align="top"/>
       </div>
     </center>
 

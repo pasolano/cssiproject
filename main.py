@@ -98,6 +98,16 @@ class ContactHandler(webapp2.RequestHandler):
         contact_template = jinja_current_directory.get_template('/htmls/contact.html')
         self.response.write(contact_template.render())
 
+class NotificationHandler(webapp2.RequestHandler):
+    def get(self):
+        contact_template = jinja_current_directory.get_template('/htmls/notifications.html')
+        self.response.write(contact_template.render())
+
+class AboutHandler(webapp2.RequestHandler):
+    def get(self):
+        about_template = jinja_current_directory.get_template('/htmls/about.html')
+        self.response.write(about_template.render())
+
 class RedirectHomeHandler(webapp2.RequestHandler):
     def get(self):
         self.redirect("/")
@@ -112,6 +122,11 @@ app = webapp2.WSGIApplication([
     ('/cur_products', ProductsHandler),
     ('/lists', ListsHandler),
     ('/contact', ContactHandler),
+<<<<<<< HEAD
     ('/add_item_to_list', AddItemHandler),
+=======
+    ('/notifications', NotificationHandler),
+    ('/about', AboutHandler),
+>>>>>>> bbf536a02f2dcc240d530489e21d8d57edd899d4
     ('/.*', RedirectHomeHandler)
 ], debug=True)

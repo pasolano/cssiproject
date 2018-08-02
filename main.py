@@ -6,6 +6,8 @@ import jinja2
 from google.appengine.api import users
 from google.appengine.ext import ndb
 from models import Item, ShoppingListItem
+import datetime
+import time
 
 
 
@@ -72,7 +74,6 @@ class AddItemHandler(webapp2.RequestHandler):
         ).put()
 
 
-
         self.redirect('/lists')
 
 
@@ -85,7 +86,7 @@ class InventoryHandler(webapp2.RequestHandler):
         user = users.get_current_user()
         Item(
         item_name=self.request.get('item_name'),
-        expiration_date=self.request.get('expiration_date'),
+        expiration_date=datetime.datetime.strptime(self.request.get('expiration_date'),"%Y-%m-%d").date(),
         use_time=self.request.get('use_time'),
         user_id=user.user_id()
         ).put()
@@ -100,8 +101,11 @@ class ContactHandler(webapp2.RequestHandler):
 
 class NotificationHandler(webapp2.RequestHandler):
     def get(self):
+        user = users.get_current_user()
+        expired_items = list(Item.expired_by_user(user, datetime.datetime.now().date()))
         contact_template = jinja_current_directory.get_template('/htmls/notifications.html')
-        self.response.write(contact_template.render())
+        self.response.write(contact_template.render(expired_items=expired_items))
+
 
 class AboutHandler(webapp2.RequestHandler):
     def get(self):

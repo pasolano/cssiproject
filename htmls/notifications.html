@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/cur_products.css">
   <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Extended+Text" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
   <link rel="icon" type="image/jpg" href="/LISTener_images/LISTenerLogo.jpg">
@@ -9,5 +9,38 @@
 </head>
 <body>
   {% include "htmls/header.html" %}
+
+  <center>
+    <h1>YOUR EXPIRED ITEMS</h1>
+    <!-- <form action="/inventory-input"> -->
+  </center>
+
+  <table id ="items" style="width:100%">
+    <tr>
+      <th>Item Name:</th>
+      <th>Your Usual Use Time:</th>
+      <th>Expiration Date:</th>
+
+    </tr>
+
+    {% for item in expired_items %}
+
+        <tr class=>
+          <td style="text-align: center; vertical-align: middle;">{{item.item_name}}</td>
+          <td style="text-align: center; vertical-align: middle;">{{item.use_time}}</td>
+          <td style="text-align: center; vertical-align: middle;">{{item.expiration_date}}</td>
+          <td>
+            <form method="POST" action="/add_item_to_list">
+              <input id="prodId" name="item_name" type="hidden" value="{{item.item_name}}">
+              <button class="button2" data_item_id="{{item.item_name}}">Add</button>
+            </form>
+          </td>
+
+        </tr>
+
+    {% endfor %}
+
+  </table>
+
 </body>
 </html>

@@ -47,7 +47,7 @@ h2 {
     border: 25px solid green; */
     /* bottom: 200px; */
     position: absolute;
-    top: 400px;
+    top: 500px;
     right: 350px;
     left: 350px;
     width: 700px;
@@ -67,3 +67,23 @@ h2 {
     top: 85%;
     width: 100%;
     }
+
+img {
+  border-radius: 50%;
+}
+
+
+.table_info {
+  position: fixed;
+  bottom: 300px;
+  left: 260px;
+}
+
+.name_text {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.email_info {
+  font-size: 25px;
+}
